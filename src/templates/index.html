@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Glamorous Weddings in Italy</title>
+	<meta name="description" content="Glamorous Weddings in Italy" />
+
+	<meta property="og:url" content="http://sirlisko.com/sandra/" />
+	<meta property="og:description" content="Sandra Colamedici Wedding Planer" />
+	<meta property="og:title" content="Glamorous Weddings in Italy" />
+	<meta property="og:image" content="http://sirlisko.com/sandra/images/backgrounds/1.jpg" />
+
+	<link href="http://fonts.googleapis.com/css?family=Pacifico%7CEB+Garamond" rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">  	
+</head>
+<body>
+	<header class="header">
+		<input type="checkbox" id="header__toggle" class="header__toggle">
+		<nav class="header__nav">
+			<ul>
+				<li><a href="#home">home</a></li>
+				<li><a href="#info">Info</a></li>
+				<li><a href="#matrimoni">Matrimoni</a></li>
+				<li><a href="#eventi">Eventi</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<span class="header__logo">Glamorous Weddings in Italy</span>
+		<label for="header__toggle" class="header__trigger"></label>
+	</header>
+
+	<main class="main-content">
+		<div id="home" class="hero panel__fixed panel__fixed--1">
+			<h1>Glamorous <span>Weddings</span> in Italy</h1>
+		</div>
+
+		@@include('./partials/about.html')
+		
+		<div class="panel__fixed panel__fixed--2">
+			<h2><span>... Se lo desideri, accade ...</span></h2>
+		</div>
+
+		@@include('./partials/matrimoni.html')
+
+		<div class="panel__fixed panel__fixed--3">
+			<h2><span>Where the Magic happens</span></h2>
+		</div>
+
+		@@include('./partials/eventi.html')
+
+		<div class="panel__fixed panel__fixed--4"></div> 
+
+		@@include('./partials/contact.html')
+
+		<div class="panel__fixed panel__fixed--5"></div> 
+	</main>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="https://cdn.rawgit.com/hpneo/gmaps/0.4.21/gmaps.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

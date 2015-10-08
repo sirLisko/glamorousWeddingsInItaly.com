@@ -1,0 +1,227 @@
+@import 'helpers/reset';
+@import 'helpers/_layout';
+@import 'helpers/_mixins';
+@import 'helpers/_variables';
+
+@import 'partials/navigation';
+@import 'partials/panels';
+@import 'partials/rsvp';
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-color: $color-4;
+	color: $color-1;
+	font-family: $primary-font;
+	font-size: 100%;
+}
+
+a {
+	color: $color-3;
+	text-decoration: none;
+}
+
+.main-content {
+	height: 100%;
+	position: relative;
+	z-index: index($main-elements, main-content);
+	h1 {
+		font-family: $special-font;
+		letter-spacing: 3px;
+	}
+}
+
+.content {
+	margin: 0 auto;
+	max-width: $M;
+	width: 90%;
+	h3 {
+		@include font-size(75px);
+		font-weight: bold;
+		line-height: 1;
+		margin-bottom: 30px;
+		text-align: left;
+		span {
+			display: block;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+		}
+		@media screen and (max-width: 450px) {
+			@include font-size(50px);
+		}
+	}
+}
+
+.content--special {
+	max-width: 1000px;
+	h4 {
+		@include font-size(35px);
+	}
+}
+
+.content__column {
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 48%;
+    p {
+    	margin-bottom: 10px;
+    }
+    span {
+    	display: block;
+    	font-style: italic;
+    }
+    img {
+    	border-radius: 10px;
+    	box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    	width: 100%;
+    }
+}
+.content__column--left {
+	margin-right: 4%;
+	text-align: left;
+}
+
+.hero__subtitle {
+	display: none;
+}
+
+.hero h1 {
+	color: white;
+    float: right;
+    font-size: 100px;
+    line-height: 1.5;
+    margin-top: 25vh;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+	width: 45%;
+	@media screen and (max-width: 1100px) {
+		font-size: 70px;
+	}
+	@media screen and (max-width: 767px) {
+		display: none;
+	}
+	span {
+		display: block;
+	}
+}
+
+.hero {
+	background-repeat: no-repeat;
+	width: 100%;
+	
+	@media screen and (min-width: 751px) and (max-width: 1100px) {
+		background-position: 45% center;
+	}
+
+	@media screen and (max-width: 767px) {
+		background-image: url("../images/backgrounds/1-small.jpg");
+	}
+}
+
+#map {
+    height: 480px;
+    margin: 40px 0;
+    width: 100%;
+    @media screen and (max-width: 450px) {
+		height: 250px;
+    }
+}
+
+.about, .location {
+	section {
+		column-count: 2;
+		column-width: 250px;
+		column-gap: 2em;
+		column-rule: 1px dotted #ddd;
+		column-fill: auto;
+	}
+}
+
+.location img {
+	border-radius: 10px;
+	float: left;
+	margin: 20px 0 0 20px;
+	width: 90%;	
+}
+
+
+.about {
+	p {
+		margin-bottom: 10px;
+	}
+	span {
+		font-style: italic;		
+	}
+}
+
+
+.about__intro {
+	font-style: italic;
+	margin-bottom: 2em;
+	img {
+		border-radius: 100%;
+		float: left;
+		margin: 0 20px 0 0;
+		width: 150px;
+		@include MQ(M) {
+			width: 200px;
+		}
+	}
+}
+
+.contact {
+	form {
+		margin: 30px auto;
+		overflow: hidden;
+	}
+	.center {
+		margin: 20px auto;
+		text-align: center;
+	}
+}
+
+.contact__email {
+    font-size: 30px;
+    margin: 20px auto;
+	text-align: center;
+	@media screen and (max-width: 450px) {
+		font-size: 19px;
+	}
+}
+
+.panel__fixed span {
+	display: block;
+	font-family: $special-font;	
+}
+
+.matrimoni__servizi {
+	margin: 1em auto;
+	.matrimoni__servizi__img {
+		border: 1px solid;
+	    border-radius: 100%;
+	    width: 100px;
+	    margin: 0 auto;
+	    padding: 15px 0 5px;
+	}
+	& > div {
+		display: inline-block;
+    	margin: 30px auto;
+    	text-align: center;
+    	vertical-align: top;
+		width: 33%;
+		@media screen and (max-width: 450px) {
+			width: 50%;
+	    }
+	}
+	p {
+		display: block;
+		font-weight: bold;
+	}
+}

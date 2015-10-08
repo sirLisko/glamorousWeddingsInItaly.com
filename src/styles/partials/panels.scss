@@ -1,0 +1,78 @@
+@for $i from 1 through 5 {
+	.panel__fixed--#{$i} {
+		background-image: url('../images/backgrounds/#{$i}.jpg');
+	}
+}
+
+.panel__scroll--1 {
+	background-color: $color-1;
+	color: lighten($color-1, 40%);
+}
+
+.panel__scroll--2 {
+	background-color: $color-2;
+	color: $color-1;
+}
+
+.panel__scroll--3 {
+	background-color: $color-3;
+	color: $color-1;
+}
+
+.panel__fixed {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	min-height: 100%;
+	position: relative;
+	z-index: index($bg-elements, fixed-bg);
+
+	@include MQ(L) {
+		background-attachment: fixed;
+	}
+
+	h2 {
+		@include font-size(30px);
+		bottom: auto;
+		color: $color-4;
+		left: 50%;
+		max-width: $L;
+		position: absolute;
+		right: auto;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: 90%;
+		text-align: center;
+		text-shadow: 0 1px 3px rgba(#000, .3);
+		
+		@include MQ(M) {
+			font-size: 36px;
+		}
+		@include MQ(L) {
+			font-size: 48px;
+			font-weight: 300;
+		}
+	}
+}
+
+.panel__scroll {
+	box-shadow: 0 0 50px rgba(#000, .5);
+	line-height: 1.6;
+	min-height: 100%;
+	overflow: hidden;
+	padding: 4em 0;
+	position: relative;
+	z-index: index($bg-elements, scrolling-bg);
+
+	@include MQ(M) {
+		@include font-size(20px);
+		font-weight: 300;
+		line-height: 2;
+	}
+}
+
+.panel__fixed--2,
+.panel__fixed--3,
+.panel__fixed--4 {
+	min-height: 50%;
+}

@@ -1,0 +1,16 @@
+// colors
+
+$color-1: #773344;
+$color-2: #E3B5A4;
+$color-3: #F5E9E2;
+$color-4: #FFFFFF;
+
+// fonts 
+
+$primary-font: 'EB Garamond', serif;
+$special-font: 'Pacifico', sans-serif;
+
+//z-index - order the elements from the lowest z-index(left) to the highest(right)
+
+$main-elements: main-content, navigation;
+$bg-elements: fixed-bg, scrolling-bg;
