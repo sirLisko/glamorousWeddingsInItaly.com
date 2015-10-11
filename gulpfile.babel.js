@@ -73,6 +73,21 @@ gulp.task('sass', () => {
 });
 
 
+gulp.task('icons', function(){
+	return gulp.src('public/svg/*.svg')
+		.pipe($.svgmin())
+		.pipe($.svgstore({
+			fileName: '_icons.html',
+			prefix: 'icon-',
+			transformSvg: function (svg, cb) {
+				svg.attr({ style: 'display:none' }).find('[fill]').removeAttr('fill');
+				cb();
+			}
+		}))
+		.pipe(gulp.dest('src/templates/partials/'));
+});
+
+
 gulp.task('watch', () => {
 	isDev = true;
 
