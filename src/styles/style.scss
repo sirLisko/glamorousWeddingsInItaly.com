@@ -42,7 +42,7 @@ a {
 
 .content {
 	margin: 0 auto;
-	max-width: $M;
+	max-width: 1000px;
 	width: 90%;
 	h3 {
 		@include font-size(75px);
@@ -55,14 +55,10 @@ a {
 			letter-spacing: 5px;
 			text-transform: uppercase;
 		}
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: $M) {
 			@include font-size(50px);
 		}
 	}
-}
-
-.content--special {
-	max-width: 1000px;
 	h4 {
 		@include font-size(35px);
 	}
@@ -178,25 +174,6 @@ a {
 	}
 }
 
-.contact {
-	form {
-		margin: 30px auto;
-		overflow: hidden;
-	}
-	.center {
-		margin: 20px auto;
-		text-align: center;
-	}
-}
-
-.contact__email {
-    font-size: 30px;
-    margin: 20px auto;
-	text-align: center;
-	@media screen and (max-width: 450px) {
-		font-size: 19px;
-	}
-}
 
 .panel__fixed span {
 	display: block;
@@ -251,4 +228,32 @@ a {
 		display: block;
 		width: 100%;
 	}
+}
+
+
+.contact__info,
+.contact__form {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	@media screen and (min-width: 550px) {
+		width: 50%;	
+	}
+}
+.contact__form {
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.contact__info {
+	span {
+		font-weight: bold;
+	}
+}
+
+
+#map .title {
+	color: $color-1;
+	font-family: $special-font;
+	font-size: 15px;
 }
