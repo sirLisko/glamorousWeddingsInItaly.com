@@ -132,21 +132,24 @@ a {
     }
 }
 
-.about, .location {
-	section {
-		column-count: 2;
-		column-width: 250px;
-		column-gap: 2em;
-		column-rule: 1px dotted #ddd;
-		column-fill: auto;
-	}
+.content--column {
+	column-count: 2;
+	column-width: 250px;
+	column-gap: 2em;
+	column-rule: 1px dotted #ddd;
+	column-fill: auto;
 }
 
-.location img {
-	border-radius: 10px;
-	float: left;
-	margin: 20px 0 0 20px;
-	width: 90%;	
+.location {
+	img {
+		border-radius: 10px;
+		float: left;
+		margin: 20px 0 0 20px;
+		width: 90%;	
+	}
+	span {
+		font-weight: bold;
+	}
 }
 
 
@@ -182,11 +185,14 @@ a {
 
 .matrimoni__servizi {
 	margin-top: 2em; 
+	text-align: center;
 	& > div {
 		display: inline-block;
 		margin: 0.5em;
-    	width: 100%;
+		text-align: left;
+    	width: 350px;
     	@media screen and (min-width: 550px) {
+    		max-width: 400px;
 			width: 45%;
     	}
 	}
