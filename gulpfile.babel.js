@@ -41,6 +41,7 @@ gulp.task('js:quality', () => {
 
 gulp.task('js', () => {
 	return gulp.src('./src/javascripts/**/*.js')
+		.pipe($.concat('main.js'))
 		.pipe($.uglify())
 		.pipe(gulp.dest('./dist/js'));
 });

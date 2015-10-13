@@ -1,7 +1,7 @@
 .header {
 	background: rgba($color-4, .95);
 	box-shadow: 0 1px 2px rgba(#000, .2);
-	height: 45px;
+	height: 50px;
 	left: 0;
 	position: fixed;
 	top: 0;
@@ -9,17 +9,23 @@
 	z-index: index($main-elements, navigation);
 	
 	@include MQ(M) {
-		bottom: 0;
 		height: 70px;
-		top: inherit;
+		&.header--home {
+			position: absolute;
+			top: calc(100vh - 70px);
+		}
 	}
 }
 
 .header__logo {
 	font-family: $special-font;
+	font-size: 20px;
 	float: left;
-	line-height: 45px;
+	line-height: 50px;
 	margin-left: 10px;
+	@include MQ(M) {
+		display: none;
+	}
 }
 
 .header__toggle {
@@ -37,7 +43,7 @@
 	background-size: 44px 44px;
 	cursor: pointer;
 	float: right;
-	height: 44px;
+	height: 50px;
 	margin-right: 5px;
 	width: 44px;
 	display: block;
@@ -71,7 +77,10 @@
 		height: 55px;
 		line-height: 55px;
 		padding-left: 5%;
-
+		text-align: center;
+		text-transform: uppercase;
+		
+		&.header__nav--active,
 		&:hover {
 			color: $color-2;
 		}
@@ -86,7 +95,6 @@
 			height: auto;
 			line-height: normal;
 			padding: .6em 1em;
-			text-transform: uppercase;
 		}
 	}
 
