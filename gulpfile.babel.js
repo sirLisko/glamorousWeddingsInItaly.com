@@ -2,11 +2,11 @@
 
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-var browserSync = require('browser-sync').create();
+import browserSync from 'browser-sync';
+import del from 'del';
+import runSequence from 'run-sequence';
 
 const $ = gulpLoadPlugins();
-
-let isDev = false;
 
 var onError = function(err){
 	$.util.log(
@@ -18,49 +18,64 @@ var onError = function(err){
 	);
 	$.util.beep();
 
-	if (isDev) {
-		this.emit('end');
-	} else {
+	if (!browserSync.active) {
 		process.exit(1);
 	}
 };
 
 
+gulp.task('clean', cb => 
+	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb)
+);
+
 gulp.task('copy', () => {
-	return gulp.src(['./public/**/*'])
+	gulp.src(['./public/**/*'])
 		.pipe(gulp.dest('./dist'));
 });
 
 
+gulp.task('images', () =>
+	gulp.src('public/images/**/*')
+		.pipe($.cache($.imagemin({
+			progressive: true,
+			interlaced: true
+		})))
+		.pipe(gulp.dest('dist/images'))
+		.pipe($.size({title: 'images'}))
+);
+
+
 gulp.task('js:quality', () => {
-	return gulp.src('./src/**/*.js')
+	gulp.src('./src/**/*.js')
 		.pipe($.eslint())
 		.pipe($.eslint.format()).on('error', onError);
 });
 
 
 gulp.task('js', () => {
-	return gulp.src('./src/javascripts/**/*.js')
+	gulp.src('./src/javascripts/**/*.js')
 		.pipe($.concat('main.js'))
 		.pipe($.uglify())
-		.pipe(gulp.dest('./dist/js'));
+		.pipe(gulp.dest('./dist/js'))
+		.pipe($.size({title: 'js'}));
 });
 
 gulp.task('js-watch', ['js', 'js:quality'], browserSync.reload);
 
 
 gulp.task('html', () => {
-	return gulp.src(['./src/templates/*.html'])
+	gulp.src(['./src/templates/*.html'])
 		.pipe($.fileInclude()).on('error', onError)
 		.pipe($.minifyHtml())
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+		.pipe($.size({title: 'html'}));
 });
 
 gulp.task('html-watch', ['html'], browserSync.reload);
 
 
 gulp.task('sass', () => {
-	return gulp.src('./src/styles/*.scss')
+	gulp.src('./src/styles/*.scss')
 		.pipe($.sass()).on('error', onError)
 		.pipe($.autoprefixer({
 			browsers: ['> 5%'],
@@ -69,34 +84,40 @@ gulp.task('sass', () => {
 		.pipe($.combineMediaQueries())
 		.pipe($.csso())
 		.pipe(gulp.dest('./dist/css'))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
+		.pipe($.size({title: 'style'}));
 });
 
 
 gulp.task('icons', function(){
-	return gulp.src('public/svg/*.svg')
+	gulp.src('public/svg/*.svg')
 		.pipe($.rename({prefix: 'icon-'}))
 		.pipe($.svgmin())
 		.pipe($.svgstore({ inlineSvg: true }))
 		.pipe($.cheerio(function ($) {
 			$('svg').attr('style',  'display:none').find('[fill]').removeAttr('fill');
 		}))
-		.pipe(gulp.dest('src/templates/partials'));
+		.pipe(gulp.dest('src/templates/tmp'));
 });
 
 
-gulp.task('watch', () => {
-	isDev = true;
-
-	browserSync.init({
+gulp.task('watch', ['default'], () => {
+	browserSync({
+		notify: false,
 		server: './dist'
 	});
 
-	gulp.start('default');
 	gulp.watch('./src/**/*.html', ['html-watch']);
 	gulp.watch('./src/**/*.scss', ['sass']);
 	gulp.watch('./src/**/*.js', ['js-watch']);
 });
 
-gulp.task('default', ['html', 'sass', 'js:quality', 'js', 'copy']);
+gulp.task('default', ['clean'], cb =>
+	runSequence(
+		['icons', 'images'],
+		['html', 'sass', 'js:quality', 'js'],
+		cb
+	)
+);
+
 gulp.task('test', ['js:quality']);

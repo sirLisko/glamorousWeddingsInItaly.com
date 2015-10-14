@@ -18,8 +18,10 @@
   "dependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
+    "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
+    "gulp-cache": "^0.3.0",
     "gulp-cheerio": "^0.6.2",
     "gulp-combine-media-queries": "^0.2.0",
     "gulp-concat": "^2.6.0",
@@ -30,10 +32,12 @@
     "gulp-minify-html": "^1.0.4",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
+    "gulp-size": "^2.0.0",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.5",
     "gulp-uglify": "^1.4.1",
-    "gulp-util": "^3.0.6"
+    "gulp-util": "^3.0.6",
+    "run-sequence": "^1.1.4"
   },
   "devDependencies": {
     "browser-sync": "^2.9.8",
