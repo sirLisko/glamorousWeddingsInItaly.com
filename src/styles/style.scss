@@ -152,6 +152,19 @@ a {
 	}
 }
 
+.eventi__workshop {
+	margin-top: 2em;
+	h4 {
+		line-height: 1;
+		margin-bottom: 10px;
+		@media screen and (max-width: 450px) {
+			span {
+				display: block;
+				font-weight: normal;
+			}
+		}
+	}
+}
 
 .about {
 	p {
