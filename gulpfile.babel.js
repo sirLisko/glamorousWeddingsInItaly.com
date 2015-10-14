@@ -75,16 +75,13 @@ gulp.task('sass', () => {
 
 gulp.task('icons', function(){
 	return gulp.src('public/svg/*.svg')
+		.pipe($.rename({prefix: 'icon-'}))
 		.pipe($.svgmin())
-		.pipe($.svgstore({
-			fileName: '_icons.html',
-			prefix: 'icon-',
-			transformSvg: function (svg, cb) {
-				svg.attr({ style: 'display:none' }).find('[fill]').removeAttr('fill');
-				cb();
-			}
+		.pipe($.svgstore({ inlineSvg: true }))
+		.pipe($.cheerio(function ($) {
+			$('svg').attr('style',  'display:none').find('[fill]').removeAttr('fill');
 		}))
-		.pipe(gulp.dest('src/templates/partials/'));
+		.pipe(gulp.dest('src/templates/partials'));
 });
 
 
