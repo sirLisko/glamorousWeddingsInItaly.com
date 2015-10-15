@@ -1,8 +1,8 @@
-.rsvp form {
+.contact form {
 	margin-top: 30px;
 }
 
-.rsvp__input {
+.contact__input {
 	display: block;
 	label {
 		display: inline-block;
@@ -23,7 +23,7 @@
 		}
 	}
 }
-.rsvp__submit {
+.contact__submit {
 	background-color: $color-3;
     border: none;
     border-radius: 10px;
@@ -38,4 +38,38 @@
 		background-color: $color-2;
 		box-shadow: 0px 3px 0px $color-3;
     }
+}
+
+.contact__info,
+.contact__form {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	@media screen and (min-width: 550px) {
+		width: 50%;	
+	}
+}
+.contact__form {
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.contact__info {
+	span {
+		font-weight: bold;
+	}
+}
+
+#contact__map {
+	height: 480px;
+	margin: 40px 0;
+	width: 100%;
+	@media screen and (max-width: 450px) {
+		height: 250px;
+	}
+	.title {
+		color: $color-1;
+		font-family: $special-font;
+		font-size: 15px;
+	}
 }

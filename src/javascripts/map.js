@@ -2,7 +2,7 @@
 
 (function(){
 	var map = new GMaps({
-		el: '#map',
+		el: '#contact__map',
 		lat: 42.3295432,
 		lng: 12.45055,
 		zoom: 13,

@@ -24,9 +24,9 @@ var onError = err => {
 };
 
 
-gulp.task('clean', cb => {
-	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb);
-});
+gulp.task('clean', cb => 
+	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb)
+);
 
 gulp.task('copy', () => {
 	gulp.src(['./public/**/*'])
@@ -112,12 +112,12 @@ gulp.task('watch', ['default'], () => {
 	gulp.watch('./src/**/*.js', ['js-watch']);
 });
 
-gulp.task('default', cb => {
+gulp.task('default', ['clean'], cb => 
 	runSequence(
 		['icons', 'images'],
 		['html', 'sass', 'js:quality', 'js'],
 		cb
-	);
-});
+	)
+);
 
 gulp.task('test', ['js:quality']);

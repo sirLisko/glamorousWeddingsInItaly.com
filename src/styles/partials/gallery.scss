@@ -1,0 +1,24 @@
+.gallery section {
+	div {
+		background-color: $color-3;
+		display: inline-block;
+		height: 13vw;
+		overflow: hidden;
+		position: relative;
+		vertical-align: top;
+		width: 20%;
+	}
+	img {
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transition: width 1s;
+		transform: translate3d(-50%, -50%, 0);
+		width: 100%;
+		&:hover {
+			opacity: .7;
+			width: 130%;
+		}
+	}
+}

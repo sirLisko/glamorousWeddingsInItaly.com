@@ -53,8 +53,11 @@
 			font-weight: 300;
 		}
 	}
+	span {
+		display: block;
+		font-family: $special-font;	
+	}
 }
-
 .panel__scroll {
 	box-shadow: 0 0 50px rgba(#000, .5);
 	line-height: 1.6;
