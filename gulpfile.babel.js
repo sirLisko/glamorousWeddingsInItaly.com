@@ -8,7 +8,7 @@ import runSequence from 'run-sequence';
 
 const $ = gulpLoadPlugins();
 
-var onError = function(err){
+var onError = err => {
 	$.util.log(
 		err.plugin + ': ' + $.util.colors.red(err.message) + ' ' +
 		((err.fileName) ?
@@ -24,9 +24,9 @@ var onError = function(err){
 };
 
 
-gulp.task('clean', cb => 
-	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb)
-);
+gulp.task('clean', cb => {
+	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb);
+});
 
 gulp.task('copy', () => {
 	gulp.src(['./public/**/*'])
@@ -89,13 +89,13 @@ gulp.task('sass', () => {
 });
 
 
-gulp.task('icons', function(){
+gulp.task('icons', () => {
 	gulp.src('public/svg/*.svg')
 		.pipe($.rename({prefix: 'icon-'}))
 		.pipe($.svgmin())
 		.pipe($.svgstore({ inlineSvg: true }))
-		.pipe($.cheerio(function ($) {
-			$('svg').attr('style',  'display:none').find('[fill]').removeAttr('fill');
+		.pipe($.cheerio($ => {
+			$('svg').attr('style', 'display:none').find('[fill]').removeAttr('fill');
 		}))
 		.pipe(gulp.dest('src/templates/tmp'));
 });
@@ -112,12 +112,12 @@ gulp.task('watch', ['default'], () => {
 	gulp.watch('./src/**/*.js', ['js-watch']);
 });
 
-gulp.task('default', ['clean'], cb =>
+gulp.task('default', cb => {
 	runSequence(
 		['icons', 'images'],
 		['html', 'sass', 'js:quality', 'js'],
 		cb
-	)
-);
+	);
+});
 
 gulp.task('test', ['js:quality']);
