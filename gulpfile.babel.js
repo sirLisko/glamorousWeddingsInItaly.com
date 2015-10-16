@@ -24,14 +24,14 @@ var onError = err => {
 };
 
 
-gulp.task('clean', cb => 
+gulp.task('clean', cb =>
 	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb)
 );
 
-gulp.task('copy', () => {
+gulp.task('copy', () =>
 	gulp.src(['./public/**/*'])
-		.pipe(gulp.dest('./dist'));
-});
+		.pipe(gulp.dest('./dist'))
+);
 
 
 gulp.task('images', () =>
@@ -45,36 +45,36 @@ gulp.task('images', () =>
 );
 
 
-gulp.task('js:quality', () => {
+gulp.task('js:quality', () =>
 	gulp.src('./src/**/*.js')
 		.pipe($.eslint())
-		.pipe($.eslint.format()).on('error', onError);
-});
+		.pipe($.eslint.format()).on('error', onError)
+);
 
 
-gulp.task('js', () => {
+gulp.task('js', () =>
 	gulp.src('./src/javascripts/**/*.js')
 		.pipe($.concat('main.js'))
 		.pipe($.uglify())
 		.pipe(gulp.dest('./dist/js'))
-		.pipe($.size({title: 'js'}));
-});
+		.pipe($.size({title: 'js'}))
+);
 
 gulp.task('js-watch', ['js', 'js:quality'], browserSync.reload);
 
 
-gulp.task('html', () => {
+gulp.task('html', () =>
 	gulp.src(['./src/templates/*.html'])
 		.pipe($.fileInclude()).on('error', onError)
 		.pipe($.minifyHtml())
 		.pipe(gulp.dest('./dist'))
-		.pipe($.size({title: 'html'}));
-});
+		.pipe($.size({title: 'html'}))
+);
 
 gulp.task('html-watch', ['html'], browserSync.reload);
 
 
-gulp.task('sass', () => {
+gulp.task('sass', () =>
 	gulp.src('./src/styles/*.scss')
 		.pipe($.sass()).on('error', onError)
 		.pipe($.autoprefixer({
@@ -85,11 +85,11 @@ gulp.task('sass', () => {
 		.pipe($.csso())
 		.pipe(gulp.dest('./dist/css'))
 		.pipe(browserSync.stream())
-		.pipe($.size({title: 'style'}));
-});
+		.pipe($.size({title: 'style'}))
+);
 
 
-gulp.task('icons', () => {
+gulp.task('icons', () =>
 	gulp.src('public/svg/*.svg')
 		.pipe($.rename({prefix: 'icon-'}))
 		.pipe($.svgmin())
@@ -97,8 +97,8 @@ gulp.task('icons', () => {
 		.pipe($.cheerio($ => {
 			$('svg').attr('style', 'display:none').find('[fill]').removeAttr('fill');
 		}))
-		.pipe(gulp.dest('src/templates/tmp'));
-});
+		.pipe(gulp.dest('src/templates/tmp'))
+);
 
 
 gulp.task('watch', ['default'], () => {
@@ -112,7 +112,7 @@ gulp.task('watch', ['default'], () => {
 	gulp.watch('./src/**/*.js', ['js-watch']);
 });
 
-gulp.task('default', ['clean'], cb => 
+gulp.task('default', ['clean'], cb =>
 	runSequence(
 		['icons', 'images'],
 		['html', 'sass', 'js:quality', 'js'],
