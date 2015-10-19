@@ -11,24 +11,26 @@
 				<p>Civita Castellana (VT)</p>
 			</div>
 		</div>
-		<form class="contact__form" action="action.php" method="POST" autocomplete="off">
+		<form class="contact__form" action="mailer.php" method="POST">
 			<div class="contact__input">
-				<label for="name">Nome</label>
-				<input type="text" id="name" name="name">
+				<label for="name">Nome *</label>
+				<input type="text" id="name" name="name" required>
 			</div>
 			<div class="contact__input">
-				<label for="email">Email</label>
-				<input type="text" id="email" name="email">
+				<label for="email">Email *</label>
+				<input type="text" id="email" name="email" required>
 			</div>
 			<div class="contact__input">
 				<label for="phone">Telefono</label>
 				<input type="text" id="phone" name="phone">
 			</div>
 			<div class="contact__input">
-				<label for="message">Messaggio</label>
-				<input type="text" id="message" name="message">
+				<label for="message">Messaggio *</label>
+				<input type="text" id="message" name="message" required>
 			</div>
 			<input class="contact__submit" type="submit" value="Invia">
+			<p class="contact__form__feedback--ok">Messaggio inviato, grazie!</p>
+			<p class="contact__form__feedback--ko">C'è stato un problem, riprova :)</p>
 		</form>
 	</div>
 	<div id="contact__map"></div>

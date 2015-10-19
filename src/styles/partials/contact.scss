@@ -1,5 +1,20 @@
-.contact form {
-	margin-top: 30px;
+.contact__info,
+.contact__form {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	@media screen and (min-width: 550px) {
+		width: 50%;
+	}
+}
+
+.contact__form {
+	margin: 30px auto;
+	overflow: hidden;
+}
+
+.contact__info span {
+	font-weight: bold;
 }
 
 .contact__input {
@@ -23,6 +38,7 @@
 		}
 	}
 }
+
 .contact__submit {
 	background-color: $color-3;
     border: none;
@@ -40,24 +56,13 @@
     }
 }
 
-.contact__info,
-.contact__form {
-	display: inline-block;
-	vertical-align: top;
-	width: 100%;
-	@media screen and (min-width: 550px) {
-		width: 50%;	
-	}
+.contact__form__feedback--ok,
+.contact__form__feedback--ko {
+	display: none;
 }
-.contact__form {
-	margin: 30px auto;
-	overflow: hidden;
-}
-
-.contact__info {
-	span {
-		font-weight: bold;
-	}
+.contact__form--ok .contact__form__feedback--ok,
+.contact__form--ko .contact__form__feedback--ko {
+	display: block;
 }
 
 #contact__map {
