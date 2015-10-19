@@ -76,3 +76,29 @@ a {
 	column-rule: 1px dotted #ddd;
 	column-fill: auto;
 }
+
+footer {
+	background-color: darken($color-1, 10%);
+	padding: 20px;
+	text-align: center;
+	div,p {
+		color: $color-2;
+		line-height: 1.5;
+		text-align: center;
+	}
+	div {
+		&, a {
+			color: $color-1;
+		}
+	}
+	a {
+		color: $color-3;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	span {
+		white-space: nowrap;
+	}
+}
