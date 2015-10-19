@@ -1,6 +1,6 @@
 /*globals GMaps*/
 
-(function(){
+(GMaps => {
 	var map = new GMaps({
 		el: '#contact__map',
 		lat: 42.3295432,
@@ -16,4 +16,4 @@
 			content: '<p class="title">Glamorous Weddings in Italy</p><p>Agenzia Wedding Planner</p><p>Via Gargarasi, 24</p><p>Civita Castellana (VT)</p>'
 		}
 	});
-})();
+})(GMaps);

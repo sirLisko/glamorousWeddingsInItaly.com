@@ -1,11 +1,11 @@
 /*globals jQuery*/
 
-(function($){
-	$(document.body).on('click', '.header__nav a', function(e) {
+($ => {
+	$(document.body).on('click', '.header__nav a', e => {
 		e.preventDefault();
 
 		$('.header__toggle').prop('checked', false);
-		
+
 		var $elm = $(e.target).addClass('header__nav--active');
 
 		$('html, body').animate({
@@ -14,7 +14,7 @@
 	});
 
 	var $header = $('.header');
-		
+
 	function setNavigationhighlight(elm) {
 		$('.header__nav--active').removeClass('header__nav--active');
 		$('.header__nav a[href=#' + elm + ']').addClass('header__nav--active');
@@ -29,17 +29,17 @@
 		}
 	}
 
-	var $window = $(window).on('scroll', function() {
+	var $window = $(window).on('scroll', () => {
 		var scrollTop = $window.scrollTop(), currentNav;
 
-		$('.panel__scroll').each(function(i, el) {
+		$('.panel__scroll').each((i, el) => {
 			var $el = $(el);
 			if ($el.offset().top + $window.height() > scrollTop && currentNav !== $el) {
 				setNavigationhighlight($el.attr('id'));
 				return false;
 			}
 		});
-		
+
 		checkHeaderPosition(scrollTop);
 	});
 

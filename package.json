@@ -21,6 +21,7 @@
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
+    "gulp-babel": "^5.3.0",
     "gulp-cache": "^0.3.0",
     "gulp-cheerio": "^0.6.2",
     "gulp-combine-media-queries": "^0.2.0",

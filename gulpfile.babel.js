@@ -29,7 +29,7 @@ gulp.task('clean', cb =>
 );
 
 gulp.task('copy', () =>
-	gulp.src(['./public/**/*'])
+	gulp.src(['./src/php/**/*'])
 		.pipe(gulp.dest('./dist'))
 );
 
@@ -54,6 +54,7 @@ gulp.task('js:quality', () =>
 
 gulp.task('js', () =>
 	gulp.src('./src/javascripts/**/*.js')
+		.pipe($.babel())
 		.pipe($.concat('main.js'))
 		.pipe($.uglify())
 		.pipe(gulp.dest('./dist/js'))
@@ -114,8 +115,8 @@ gulp.task('watch', ['default'], () => {
 
 gulp.task('default', ['clean'], cb =>
 	runSequence(
-		['icons', 'images'],
-		['html', 'sass', 'js:quality', 'js'],
+		['icons', 'images', 'sass', 'js:quality', 'js', 'copy'],
+		['html'],
 		cb
 	)
 );
