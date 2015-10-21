@@ -1,6 +1,14 @@
 @for $i from 1 through 5 {
 	.panel__fixed--#{$i} {
-		background-image: url('../images/backgrounds/#{$i}.jpg');
+		@media screen and (min-width: 1024px) {
+			background-image: url('../images/backgrounds/#{$i}@L.jpg');
+		}
+		@media screen and (min-width: 500px) and (max-width: 1024px){
+			background-image: url('../images/backgrounds/#{$i}@M.jpg');
+		}
+		@media screen and (max-width: 500px){
+			background-image: url('../images/backgrounds/#{$i}@S.jpg');
+		}
 	}
 }
 
@@ -44,7 +52,7 @@
 		width: 90%;
 		text-align: center;
 		text-shadow: 0 1px 3px rgba(#000, .3);
-		
+
 		@include MQ(M) {
 			font-size: 36px;
 		}
@@ -55,7 +63,7 @@
 	}
 	span {
 		display: block;
-		font-family: $special-font;	
+		font-family: $special-font;
 	}
 }
 .panel__scroll {

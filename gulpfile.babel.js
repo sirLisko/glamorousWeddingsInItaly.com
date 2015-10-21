@@ -44,6 +44,24 @@ gulp.task('images', () =>
 		.pipe($.size({title: 'images'}))
 );
 
+gulp.task('image-responsive', () =>
+	gulp.src('src/images/backgrounds/*')
+		.pipe($.responsive({
+			'*':
+			[{
+				width: 800,
+				rename: {suffix: '@S'}
+			},{
+				width: 1200,
+				rename: {suffix: '@M'}
+			},{
+				width: 1600,
+				rename: {suffix: '@L'}
+			}]
+		}))
+		.pipe(gulp.dest('public/images/backgrounds'))
+);
+
 
 gulp.task('js:quality', () =>
 	gulp.src('./src/**/*.js')
@@ -115,7 +133,7 @@ gulp.task('watch', ['default'], () => {
 
 gulp.task('default', ['clean'], cb =>
 	runSequence(
-		['icons', 'images', 'sass', 'js:quality', 'js', 'copy'],
+		['icons', 'images', 'sass', 'js', 'copy'],
 		['html'],
 		cb
 	)
