@@ -24,6 +24,10 @@ var onError = err => {
 };
 
 
+gulp.task('clear-cache', () =>
+	$.cache.clearAll()
+);
+
 gulp.task('clean', cb =>
 	del(['.tmp', 'dist/*', 'src/**/tmp'], {dot: true}, cb)
 );
