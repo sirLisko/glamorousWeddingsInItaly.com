@@ -3,11 +3,12 @@
 	box-shadow: 0 1px 2px rgba(#000, .2);
 	height: 50px;
 	left: 0;
+	padding: 0 12px;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: index($main-elements, navigation);
-	
+
 	@include MQ(M) {
 		height: 70px;
 		&.header--home {
@@ -22,7 +23,6 @@
 	font-size: 20px;
 	float: left;
 	line-height: 50px;
-	margin-left: 10px;
 	@include MQ(M) {
 		display: none;
 	}
@@ -39,14 +39,18 @@
 }
 
 .header__trigger {
-	background: url('../images/icon-menu.svg') no-repeat center center;
-	background-size: 44px 44px;
 	cursor: pointer;
-	float: right;
-	height: 50px;
-	margin-right: 5px;
-	width: 44px;
 	display: block;
+	float: right;
+	svg {
+		fill: currentColor;
+		height: 25px;
+		margin-top: 12px;
+		width: 25px;
+		&:hover {
+			fill: $color-2;
+		}
+	}
 	@include MQ(M) {
 		display: none;
 	}
@@ -60,7 +64,7 @@
 		position: absolute;
 		width: 100%;
 		transform: translateY(-100%);
-		
+
 		@include MQ(M) {
 			line-height: 70px;
 			position: static;
@@ -78,12 +82,12 @@
 		line-height: 55px;
 		text-align: center;
 		text-transform: uppercase;
-		
+
 		&.header__nav--active,
 		&:hover {
 			color: $color-2;
 		}
-		
+
 		@include MQ(M) {
 			@include font-size(14px);
 			background: transparent;

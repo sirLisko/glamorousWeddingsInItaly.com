@@ -109,7 +109,7 @@ gulp.task('sass', () =>
 
 
 gulp.task('icons', () =>
-	gulp.src('public/svg/*.svg')
+	gulp.src('src/svg/*.svg')
 		.pipe($.rename({prefix: 'icon-'}))
 		.pipe($.svgmin())
 		.pipe($.svgstore({ inlineSvg: true }))

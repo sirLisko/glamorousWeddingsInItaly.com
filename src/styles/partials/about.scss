@@ -3,7 +3,7 @@
 		margin-bottom: 10px;
 	}
 	span {
-		font-style: italic;		
+		font-style: italic;
 	}
 }
 
@@ -39,7 +39,7 @@
 		.about__trigger--less {
 			display: inline-block;
 		}
-		&:after {
+		svg {
 			transform: rotate(270deg);
 		}
 	}
@@ -51,17 +51,14 @@
 	&:hover {
 		color: $color-3;
 	}
-	&:after {
-		background: url("../images/icon-arrow.svg") no-repeat center center;
-		background-size: 18px 18px;
-		content: '';
-		display: inline-block;
-		height: 15px;
-		margin-left: 5px;
-		transition: transform 1s;
+	svg {
+		fill: currentColor;
+		height: 13px;
+		margin-left: 7px;
 		transform: rotate(90deg);
+		transition: transform 1s ease;
 		vertical-align: middle;
-		width: 15px;
+		width: 13px;
 	}
 	span {
 		font-style: normal;
