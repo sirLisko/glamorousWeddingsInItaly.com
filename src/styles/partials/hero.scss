@@ -1,7 +1,7 @@
 .hero {
 	background-repeat: no-repeat;
 	width: 100%;
-	
+
 	@media screen and (min-width: 751px) and (max-width: 1100px) {
 		background-position: 45% center;
 	}
@@ -27,5 +27,38 @@
 		span {
 			display: block;
 		}
+	}
+}
+
+.hero__welcome {
+	bottom: 100px;
+	color: $color-4;
+	left: 50%;
+	letter-spacing: 1px;
+	position: absolute;
+	text-shadow: 1px 1px 2px #969696;
+	text-transform: uppercase;
+	transform: translateX(-50%);
+	svg {
+		animation: bounce 2s 3;
+		display: block;
+		fill: currentColor;
+    	filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+		height: 17px;
+		margin: 10px auto 0;
+		transform: rotate(90deg);
+		width: 17px;
+	}
+}
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		transform: rotate(90deg) translateX(0);
+	}
+	40% {
+		transform: rotate(90deg) translateX(-6px);
+	}
+	60% {
+		transform: rotate(90deg) translateX(-4px);
 	}
 }
