@@ -79,17 +79,14 @@ a {
 
 footer {
 	background-color: darken($color-1, 10%);
+	color: $color-2;
 	padding: 20px;
 	text-align: center;
-	div,p {
-		color: $color-2;
-		line-height: 1.5;
-		text-align: center;
+	p {
+		line-height: 2;
 	}
-	div {
-		&, a {
-			color: $color-1;
-		}
+	.footer__credits, .footer__credits a {
+		color: $color-1;
 	}
 	a {
 		color: $color-3;
