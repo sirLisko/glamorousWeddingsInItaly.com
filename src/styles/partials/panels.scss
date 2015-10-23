@@ -1,4 +1,4 @@
-@for $i from 1 through 5 {
+@for $i from 2 through 5 {
 	.panel__fixed--#{$i} {
 		@media screen and (min-width: 1024px) {
 			background-image: url('../images/backgrounds/#{$i}@L.jpg');
