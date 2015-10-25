@@ -37,7 +37,6 @@
 
 .hero__welcome {
 	bottom: 25px;
-	color: $color-4;
 	left: 50%;
 	position: absolute;
 	text-shadow: 1px 1px 2px #969696;
@@ -47,11 +46,9 @@
 	}
 	svg {
 		animation: bounce 2s infinite;
-		display: block;
-		fill: currentColor;
+		fill: $color-4;
     	filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
 		height: 17px;
-		margin: 10px auto 0;
 		width: 17px;
 	}
 }
