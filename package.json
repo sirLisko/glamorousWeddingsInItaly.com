@@ -16,6 +16,7 @@
   },
   "homepage": "http://sirlisko.com",
   "dependencies": {
+    "apache-server-configs": "^2.14.0",
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
     "browser-sync": "^2.9.8",

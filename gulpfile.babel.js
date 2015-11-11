@@ -33,8 +33,12 @@ gulp.task('clean', cb =>
 );
 
 gulp.task('copy', () =>
-	gulp.src(['./src/php/**/*'])
-		.pipe(gulp.dest('./dist'))
+	gulp.src([
+		'node_modules/apache-server-configs/dist/.htaccess',
+		'./src/php/**/*',
+		'./extras/**/*'
+	])
+	.pipe(gulp.dest('./dist'))
 );
 
 
