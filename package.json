@@ -44,7 +44,8 @@
   },
   "devDependencies": {
     "gulp-eslint": "^1.0.0",
-    "gulp-responsive": "^1.2.1"
+    "gulp-responsive": "^1.2.1",
+    "gulp-sitemap": "^2.2.0"
   },
   "keywords": [
     "glamorousweddingsinitaly",

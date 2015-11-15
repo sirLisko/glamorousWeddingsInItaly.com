@@ -142,6 +142,15 @@ gulp.task('icons', () =>
 );
 
 
+gulp.task('sitemap', ['html'], () =>
+	gulp.src('./dist/**/*.html')
+		.pipe($.sitemap({
+			siteUrl: 'http://glamorousweddingsinitaly.com'
+		}))
+		.pipe(gulp.dest('./extras'))
+);
+
+
 gulp.task('watch', ['default'], () => {
 	browserSync({
 		notify: false,
