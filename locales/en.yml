@@ -1,0 +1,37 @@
+lang: 'en'
+about: 'About'
+weddings: 'Weddings'
+events: 'Events'
+contacts: 'Contacts'
+title_1: 'Wher.'
+title_2: 'your wishes'
+title_3: 'come true'
+
+show: 'Show'
+more: 'more'
+less: 'less'
+
+about_intro: '<p>"I have always loved hosting friends and family at home. Making them feel like precious guests and turn their time with us into unforgettable memories has always been essential to me.</p><p>Dinners, parties and family weddings rich with warmth, flowers, elegant and original tables have always filled my heart with joy. Sharing the important moments of life is my mantra.</p>"'
+about_description: '<p>Sandra Colamedici was born and lives in the enchanting town of Civita Castellana, at the heart of the Tuscia Viterbese region. Famous for its 12th century cathedral and the medieval centre, Civita is the ideal spot to enjoy central Italy. Rome is just one stone’s throw away, as are the medieval town of Viterbo e the calm and green region of Umbria.</p><p>Wedding &amp; Event Planner for passion and natural inclination, Sandra lives with her husband in her early twentieth century country house, which she recently renewed to make it the perfect venue for an unforgettable wedding.</p><p>Over the past few months, Sandra felt the need to go back to school and turn her passion into a proper job by attending Wedding Planner workshops and courses with some of the most renowned professionals in Italy.</p><p>Attracted by the creative opportunities behind florist artworks, she also joined top-notch Flower Art &amp; Design classes.</p><p>Lover of the good life and at the forefront of new fashion trends, Sandra has also been a Sommelier AIS since 1999.</p><p>Elegance and attention to details are her weddings’ watchwords, which will make your party an exclusive, unique and unforgettable event!</p><p>Thanks to her outstanding organisational skills and her sparkling personality, Sandra will be able to lead you step by step through the realisation of your dream.</p>'
+
+weddings_intro: '<p>Whether your wedding reception takes place after a religious or civil ceremony, Sandra will be help you choose your theme and location as well as put you in touch with the best caterers, florists, designers and photographers of the area and will be glad to help you arrange travel and accommodation for your guests.</p>'
+
+photo: 'Photo'
+invitation: 'Invitation Printing'
+hospitality: 'Hospitality'
+papers: 'Papers'
+everythingelse: 'and everything else'
+
+events_intro: '<p><span>Christenings</span>, <span>birthdays</span>, <span>confirmations</span>... Sandra will make every occasion unique, elegant and fun.</p>'
+officeevents: 'Office Events'
+workshop_intro: '<p>Sandra and her team offer their help with organising a wide array of events ranging from cultural and fashion workshops to office and team building events. Starting from setting a budget to taking care of details, nothing will be left to chance.</p>'
+
+contact_me: 'Contact me'
+name: 'Name'
+phone: 'Phone'
+message: 'Message'
+message_ok: 'Message sent, Thank You!'
+message_ko: 'Ops, there was a problem, please retry :)'
+send: 'Send'
+
+copyright: 'All rights reserved'

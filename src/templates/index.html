@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{lang|translate}}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -12,7 +12,7 @@
 	<meta property="og:image" content="http://glamorousweddingsinitaly.com/images/backgrounds/1-small.jpg" />
 
 	<link href="http://fonts.googleapis.com/css?family=Pacifico%7CEB+Garamond" rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<link rel="canonical" href="glamorousweddingsinitaly.com">
 
 	@@include('./tmp/svg.svg')
@@ -25,11 +25,11 @@
 		<nav class="header__nav">
 			<ul>
 				<li><a class="header__nav--active" href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#weddings">Weddings</a></li>
-				<li><a href="#eventi">Events</a></li>
-				<li><a href="#gallery">Gallery</a></li>
-				<li><a href="#contacts">Contacts</a></li>
+				<li><a href="#{{about|translate|lowercase}}">{{about|translate}}</a></li>
+				<li><a href="#{{weddings|translate|lowercase}}">{{weddings|translate}}</a></li>
+				<li><a href="#{{events|translate|lowercase}}">{{events|translate}}</a></li>
+				<li><a href="#gallery">gallery</a></li>
+				<li><a href="#{{contacts|translate|lowercase}}">{{contacts|translate}}</a></li>
 			</ul>
 		</nav>
 		<span class="header__logo">Glamorous Weddings in Italy</span>
@@ -40,7 +40,7 @@
 
 	<main class="main-content">
 		<div id="home" class="hero panel__fixed panel__fixed--1">
-			<h1>...Where <span>your wishes,</span>come true...</h1>
+			<h1>...{{title_1|translate}} <span>{{title_2|translate}}, </span>{{title_3|translate}}...</h1>
 		</div>
 
 		@@include('./partials/about.html')
@@ -70,6 +70,6 @@
 	<script src="https://cdn.rawgit.com/lokesh/lightbox2/v2.8.1/dist/js/lightbox.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script src="https://cdn.rawgit.com/hpneo/gmaps/0.4.21/gmaps.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 </html>
