@@ -69,6 +69,18 @@ gulp.task('image-responsive', () =>
 		.pipe(gulp.dest('public/images/backgrounds'))
 );
 
+gulp.task('image-gallery', () =>
+	gulp.src('src/images/gallery/*')
+		.pipe($.responsive({
+			'*':
+			[{
+				width: 1000,
+				withoutEnlargement: true
+			}]
+		}))
+		.pipe(gulp.dest('public/images/gallery'))
+);
+
 
 gulp.task('js:quality', () =>
 	gulp.src('./src/**/*.js')
