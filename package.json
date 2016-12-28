@@ -7,7 +7,8 @@
     "url": "git@bitbucket.org:sirLisko/sandra.git"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/gulp"
+    "postinstall": "node_modules/.bin/gulp",
+    "build": "node_modules/.bin/gulp"
   },
   "author": {
     "name": "Luca Lischetti",
