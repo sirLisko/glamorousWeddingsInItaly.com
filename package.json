@@ -4,49 +4,50 @@
   "description": "Website for Sandra",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:sirLisko/sandra.git"
+    "url": "git@github.com:sirLisko/glamorousWeddingsInItaly.com.git"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/gulp",
-    "build": "node_modules/.bin/gulp"
+    "postinstall": "gulp",
+    "build": "gulp",
+    "watch": "gulp watch"
   },
   "author": {
     "name": "Luca Lischetti",
     "email": "sirlisko@gmail.com",
     "url": "http://sirlisko.com"
   },
-  "homepage": "http://sirlisko.com",
+  "homepage": "http://glamorousWeddingsInItaly.com",
   "dependencies": {
-    "babel": "^5.8.23",
-    "babel-core": "^5.8.25",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.9.8",
-    "del": "^2.0.2",
+    "del": "^3.0.0",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-babel": "^5.3.0",
-    "gulp-cache": "^0.3.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-cache": "^1.0.2",
     "gulp-cheerio": "^0.6.2",
     "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.0",
-    "gulp-csso": "^1.0.0",
-    "gulp-file-include": "^0.13.7",
-    "gulp-imagemin": "^2.3.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-file-include": "^2.0.1",
+    "gulp-imagemin": "^4.1.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-html": "^1.0.4",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-size": "^2.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
     "gulp-svgmin": "^1.2.0",
-    "gulp-svgstore": "^5.0.5",
+    "gulp-svgstore": "^6.1.1",
     "gulp-translator": "^0.2.0",
-    "gulp-uglify": "^1.4.1",
+    "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.6",
-    "run-sequence": "^1.1.4"
+    "run-sequence": "^2.2.1"
   },
   "devDependencies": {
-    "gulp-eslint": "^1.0.0",
-    "gulp-responsive": "^1.2.1",
-    "gulp-sitemap": "^2.2.0"
+    "gulp-eslint": "^5.0.0",
+    "gulp-responsive": "^2.11.0",
+    "gulp-sitemap": "^5.1.0"
   },
   "keywords": [
     "glamorousweddingsinitaly",
