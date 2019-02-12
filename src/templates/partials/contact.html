@@ -1,49 +1,85 @@
-<div id="{{contacts|translate|lowercase}}" class="contact panel__scroll panel__scroll--1">
-	<div class="content">
-		<div class="contact__info">
-			<h3>{{contact_me|translate}}</h3>
-			<p><a href="mailto://sandra@glamorousweddingsinitaly.com">sandra@glamorousweddingsinitaly.com</a></p>
-			<p>+39 3394721430</p>
-			<div class="contact__social">
-				<a href="https://www.facebook.com/Sandra-Colamedici-EventWedding-Planner-1035163589904893/"><svg><use xlink:href="#icon-s_facebook"></use></svg></a>
-				<a href="https://www.instagram.com/sandra.colamedici/"><svg><use xlink:href="#icon-s_instagram"></use></svg></a>
-				<a href="https://www.pinterest.com/colamedici/"><svg><use xlink:href="#icon-s_pinterest"></use></svg></a>
-			</div>
-			<div class="contact__info__adress">
-				<p>Wedding Planner Agency</p>
-				<p><span>Glamorous Weddings in Italy</span></p>
-				<p>Via Gargarasi, 24</p>
-				<p>01033 - Civita Castellana (VT) {{italy|translate}}</p>
-			</div>
-		</div>
-		<form class="contact__form" action="/mailer.php" method="POST">
-			<div class="contact__input">
-				<label for="name">{{name|translate}} *</label>
-				<input type="text" id="name" name="name" required>
-			</div>
-			<div class="contact__input">
-				<label for="email">Email *</label>
-				<input type="email" id="email" name="email" required>
-			</div>
-			<div class="contact__input">
-				<label for="phone">{{phone|translate}}</label>
-				<input type="tel" id="phone" name="phone">
-			</div>
-			<div class="contact__input">
-				<label for="message">{{message|translate}} *</label>
-				<input type="text" id="message" name="message" required>
-			</div>
-			<input class="contact__submit" type="submit" value="{{send|translate}}">
-			<p class="contact__form__feedback--ok">{{message_ok|translate}}</p>
-			<p class="contact__form__feedback--ko">{{message_ko|translate}}</p>
-		</form>
-	</div>
-	<div id="contact__map"></div>
+<div
+  id="{{ contacts | translate | lowercase }}"
+  class="contact panel__scroll panel__scroll--1"
+>
+  <div class="content">
+    <div class="contact__info">
+      <h3>{{ contact_me | translate }}</h3>
+      <p>
+        <a href="mailto://sandra@glamorousweddingsinitaly.com"
+          >sandra@glamorousweddingsinitaly.com</a
+        >
+      </p>
+      <p>+39 3394721430</p>
+      <div class="contact__social">
+        <a
+          href="https://www.facebook.com/Sandra-Colamedici-EventWedding-Planner-1035163589904893/"
+          ><svg><use xlink:href="#icon-s_facebook"></use></svg
+        ></a>
+        <a href="https://www.instagram.com/sandra.colamedici/"
+          ><svg><use xlink:href="#icon-s_instagram"></use></svg
+        ></a>
+        <a href="https://www.pinterest.com/colamedici/"
+          ><svg><use xlink:href="#icon-s_pinterest"></use></svg
+        ></a>
+      </div>
+      <div class="contact__info__adress">
+        <p>Wedding Planner Agency</p>
+        <p><span>Glamorous Weddings in Italy</span></p>
+        <p>Via Gargarasi, 24</p>
+        <p>01033 - Civita Castellana (VT) {{ italy | translate }}</p>
+      </div>
+    </div>
+    <form class="contact__form" action="/mailer.php" method="POST">
+      <div class="contact__input">
+        <label for="name">{{ name | translate }} *</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="contact__input">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="contact__input">
+        <label for="phone">{{ phone | translate }}</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+      <div class="contact__input">
+        <label for="message">{{ message | translate }} *</label>
+        <input type="text" id="message" name="message" required />
+      </div>
+      <input
+        class="contact__submit"
+        type="submit"
+        value="{{ send | translate }}"
+      />
+      <p class="contact__form__feedback--ok">{{ message_ok | translate }}</p>
+      <p class="contact__form__feedback--ko">{{ message_ko | translate }}</p>
+    </form>
+  </div>
+  <div id="contact__map"></div>
 </div>
 <footer>
-	<p>
-		<span>© Copyright 2015 Sandra Colamedici -</span> <span>{{copyright|translate}}.</span>
-		<span>Created with ♥ by <a href="http://sirlisko.com">Luca Lischetti</a> (<a href="http://twitter.com/sirLisko">@sirLisko</a>).</span>
-	</p>
-	<p class="footer__credits">Icons made by <a href="http://www.flaticon.com/authors/daniel-bruce" title="Daniel Bruce">Daniel Bruce</a>, <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
+  <p>
+    <span>© Copyright 2015 Sandra Colamedici -</span>
+    <span>{{ copyright | translate }}.</span>
+    <span
+      >Created with ♥ by <a href="https://sirlisko.com">Luca Lischetti</a> (<a
+        href="https://twitter.com/sirLisko"
+        >@sirLisko</a
+      >).</span
+    >
+  </p>
+  <p class="footer__credits">
+    Icons made by
+    <a href="http://www.flaticon.com/authors/daniel-bruce" title="Daniel Bruce"
+      >Daniel Bruce</a
+    >, <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+    <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is
+    licensed by
+    <a
+      href="http://creativecommons.org/licenses/by/3.0/"
+      title="Creative Commons BY 3.0"
+      >CC BY 3.0</a
+    >
+  </p>
 </footer>
