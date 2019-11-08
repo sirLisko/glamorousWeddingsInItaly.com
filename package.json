@@ -53,5 +53,8 @@
     "glamorousweddingsinitaly",
     "weddings",
     "sandra"
-  ]
+  ],
+  "engines": {
+    "node": "~0.10"
+  }
 }
