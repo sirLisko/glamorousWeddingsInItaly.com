@@ -1,7 +1,7 @@
 /* TEAM */
   Author: Luca Lischetti
-  Site: http://sirLisko.com
-  Mail: sirLisko@gmail.com
+  Site: https://sirLisko.com
+  Mail: luca@sirlisko.com
   Twitter: @sirLisko
   Location: London, UK
   From: Milan, I
